@@ -10,6 +10,7 @@ const db = require("./db");
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
+const appOrigin = process.env.APP_ORIGIN || "https://morgan-collection.onrender.com";
 const uploadDir = path.join(__dirname, "uploads");
 fs.mkdirSync(uploadDir, { recursive: true });
 const customerDataFile = path.join(__dirname, "data", "customers.json");
