@@ -1,3 +1,4 @@
+const appOrigin = "https://morgan-collection.onrender.com";
 require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
