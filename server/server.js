@@ -9,6 +9,7 @@ const fs = require("fs");
 const db = require("./db");
 
 const app = express();
+const appOrigin = process.env.APP_ORIGIN || "https://morgan-collection.onrender.com";
 const PORT = Number(process.env.PORT || 3000);
 const appOrigin = process.env.APP_ORIGIN || "https://morgan-collection.onrender.com";
 const uploadDir = path.join(__dirname, "uploads");
