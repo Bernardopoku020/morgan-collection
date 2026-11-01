@@ -1,0 +1,10 @@
+{
+  "name": "Morgan Collection",
+  "short_name": "Morgan",
+  "description": "Unisex fashion, shoes and slippers from Ghana.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f2ed",
+  "theme_color": "#1f2420",
+  "icons": []
+}
