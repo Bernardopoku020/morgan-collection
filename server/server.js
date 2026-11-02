@@ -1,4 +1,3 @@
-const appOrigin = "https://morgan-collection.onrender.com";
 require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
@@ -10,7 +9,6 @@ const fs = require("fs");
 const db = require("./db");
 
 const app = express();
-const appOrigin = process.env.APP_ORIGIN || "https://morgan-collection.onrender.com";
 const PORT = Number(process.env.PORT || 3000);
 const appOrigin = process.env.APP_ORIGIN || "https://morgan-collection.onrender.com";
 const uploadDir = path.join(__dirname, "uploads");
@@ -30,9 +28,8 @@ const writeSettings = (settings) => fs.writeFileSync(settingsFile, JSON.stringif
 
 app.use(cors({
   origin: (origin, callback) => {
-        if (origin === "https://morgan-collection.onrender.com") return callback(null, true);
+    if (!origin || origin === appOrigin || /^https?:\/\/(localhost|127\.0\.0\.1|10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|172\.(1[6-9]|2\d|3[0-1])\.\d+)(:\d+)?$/.test(origin)) {
       return callback(null, true);
-          if (origin === appOrigin) return callback(null, true);
     }
     callback(new Error("Origin is not allowed."));
   },
